@@ -1,0 +1,46 @@
+syntax = "proto3";
+
+package netcal;
+
+// Describes a network in network calculus
+message Network {
+  // Global network ID in the dataset
+  int32 id = 1;
+
+  // List of servers of the network
+  repeated Server server = 2;
+
+  // List of flows of the network
+  repeated Flow flow = 3;
+}
+
+// Server description
+message Server {
+  // Server ID. Unique per network
+  int32 id = 1;
+
+  // Service curve parameters
+  double rate = 2;
+  double latency = 3;
+}
+
+// Flow description
+message Flow {
+  // Flow ID. Unique per network
+  int32 id = 1;
+
+  // Arrival curve parameters
+  double rate = 2;
+  double burst = 3;
+
+  // List of server ids traversed by the flow
+  repeated int32 path = 4;
+
+  // Delay bounds for FIFO multiplexing (without flow prolongation)
+  Result fifo = 5;
+}
+
+message Result {
+  // Delay bound of the foi
+  double delay_bound = 1;
+}
