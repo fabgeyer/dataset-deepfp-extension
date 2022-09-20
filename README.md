@@ -1,6 +1,6 @@
 # Network Calculus with Flow Prolongation - A Feedforward FIFO Analysis enabled by ML
 
-This repository contains the dataset used for the paper _"Network Calculus with Flow Prolongation - A Feedforward FIFO Analysis enabled by ML"_. We refer to the article for a full explanation of the methodology used for generating the dataset.
+This repository contains the dataset used for the paper [_"Network Calculus with Flow Prolongation - A Feedforward FIFO Analysis enabled by ML"_](https://doi.org/10.1109/TC.2022.3204225) published in IEEE Transactions on Computers. We refer to the article for a full explanation of the methodology used for generating the dataset.
 
 This is an extension of the DeepFP method initially presented in [_"Tightening Network Calculus Delay Bounds by Predicting Flow Prolongations in the FIFO Analysis"_](https://doi.org/10.1109/RTAS52030.2021.00021) presented at IEEE RTAS 2021. Compared to [the dataset](https://github.com/fabgeyer/dataset-rtas2021) and method previously used, we use reinforcement learning to train the neural network used in DeepFP. Hence our training dataset does not contain information about the prolongations.
 
@@ -28,6 +28,21 @@ $ git clone https://github.com/fabgeyer/dataset-deepfp-extension.git
 $ cd dataset-deepfp-extension.git
 $ pip3 install -r requirements.txt
 $ python3 example.py dataset-train.pbz
+```
+
+
+## Citation
+
+If you use this dataset for your research, please include the following reference in any resulting publication:
+
+```bibtex
+@article{GeyerSchefflerBondorf_TC2022,
+	author        = {Geyer, Fabien and Scheffler, Alexander and Bondorf, Steffen},
+	journal       = {IEEE Transactions on Computers},
+	title         = {Network Calculus with Flow Prolongation - A Feedforward {FIFO} Analysis enabled by {ML}},
+	year          = {2022},
+	doi           = {10.1109/TC.2022.3204225},
+}
 ```
 
 
