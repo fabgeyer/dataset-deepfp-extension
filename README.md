@@ -4,6 +4,21 @@ This repository contains the dataset used for the paper [_"Network Calculus with
 
 This is an extension of the DeepFP method initially presented in [_"Tightening Network Calculus Delay Bounds by Predicting Flow Prolongations in the FIFO Analysis"_](https://doi.org/10.1109/RTAS52030.2021.00021) presented at IEEE RTAS 2021. Compared to [the dataset](https://github.com/fabgeyer/dataset-rtas2021) and method previously used, we use reinforcement learning to train the neural network used in DeepFP. Hence our training dataset does not contain information about the prolongations.
 
+## Citation
+
+If you use this dataset for your research, please include the following reference in any resulting publication:
+
+```bibtex
+@article{GeyerSchefflerBondorf_TC2022,
+	author        = {Geyer, Fabien and Scheffler, Alexander and Bondorf, Steffen},
+	journal       = {IEEE Transactions on Computers},
+	title         = {Network Calculus with Flow Prolongation - A Feedforward {FIFO} Analysis enabled by {ML}},
+	year          = {2022},
+	doi           = {10.1109/TC.2022.3204225},
+}
+```
+
+# Numerical Evaluation
 
 ## Information
 
@@ -30,22 +45,22 @@ $ pip3 install -r requirements.txt
 $ python3 example.py dataset-train.pbz
 ```
 
+# Motivating Example
 
-## Citation
+The paper contains a motivating example showing potential effectiveness on a sample network topology and one potential prolongation, depending on the  bottleneck utilization. 
+The network topology is depicted in Figure 2 in the paper.
+Curve shapes are given in Sec. 4-1 as $\beta_{40,T}$ and $\alpha_{r=10u,b}$ where $10u$ defines the utilization at the bottlenect of the topology $\frac{4r}{R}$.
 
-If you use this dataset for your research, please include the following reference in any resulting publication:
+Curve and utilization parameters as well as delay and output burstiness bounds are given in these two CSV files in folder `motivating_FP_example_data_Fig_2`:
 
-```bibtex
-@article{GeyerSchefflerBondorf_TC2022,
-	author        = {Geyer, Fabien and Scheffler, Alexander and Bondorf, Steffen},
-	journal       = {IEEE Transactions on Computers},
-	title         = {Network Calculus with Flow Prolongation - A Feedforward {FIFO} Analysis enabled by {ML}},
-	year          = {2022},
-	doi           = {10.1109/TC.2022.3204225},
-}
-```
+- `fp_sensitivity_delay_bound.csv`
+- `fp_sensitivity_output_burstiness_bound.csv` 
 
+Two metrics were computed, the second of which is plotted in the paper:
 
-## License
+1. `improvement_overall[%]` according to the Equation 20 in the paper (yet for delay and burstiness).
+2. `improvement_variable_part[%]` exploits the possibility to easily remove the inital and invariant latency or burstiness of the curves. I.e., it shows the improvement in the variable part of the bounds. It is computed by removing $4T$ or $b$, respectively, from the divisor.
+
+# License
 
 The data in this repository is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](http://creativecommons.org/licenses/by-sa/4.0).
