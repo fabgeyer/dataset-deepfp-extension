@@ -1,4 +1,4 @@
-latency, burst, util[%], output_ludb_ff, output_ludb_ff_fp, improvement[%], alt_metric_improvement[%]
+T, b, u[%], output_burstiness_bound_ludb_ff, output_burstiness_bound_ff_fp, improvement[%], improvement_variable_part[%]
 0.1, 0.0, 10.0, 0.41552473684210534,0.4102532051282052,1.268644498511115,1.268644498511115
 0.1, 0.0, 20.0, 0.8644173333333334,0.8420526315789474,2.5872574382727924,2.5872574382727924
 0.1, 0.0, 30.000000000000004, 1.3507337647058828,1.2970236486486488,3.97636584356275,3.97636584356275
